@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\models\\organzationlevelaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:models\\organzationlevelaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\controllers\\databaserepositorycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:controllers\\databaserepositorycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\views\\shared\\sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:views\\shared\\sidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\controllers\\organzationlevelaccessescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:controllers\\organzationlevelaccessescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|e:\\sobha\\themeforest-ox1eudlj-auxx-aspnet-mvc-admin-dashboard-template\\auxx_asp_mvc_v1.0.0\\asp.net\\admin\\auxx\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DD10CF1D-9D73-45A0-8BDD-153CFA0C4A44}|Auxx.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrganzationLevelAccess.cs",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Models\\OrganzationLevelAccess.cs",
+              "RelativeDocumentMoniker": "Models\\OrganzationLevelAccess.cs",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Models\\OrganzationLevelAccess.cs",
+              "RelativeToolTip": "Models\\OrganzationLevelAccess.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAqwEAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-15T06:53:47.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrganzationLevelAccessesController.cs",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\OrganzationLevelAccessesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrganzationLevelAccessesController.cs",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\OrganzationLevelAccessesController.cs",
+              "RelativeToolTip": "Controllers\\OrganzationLevelAccessesController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAB8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T10:41:34.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DatabaseRepositoryContext.cs",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\DatabaseRepositoryContext.cs",
+              "RelativeDocumentMoniker": "Controllers\\DatabaseRepositoryContext.cs",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\DatabaseRepositoryContext.cs",
+              "RelativeToolTip": "Controllers\\DatabaseRepositoryContext.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAHIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T15:53:28.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T15:34:11.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAYwIUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-28T03:01:09.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sidebar.cshtml",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Shared\\Sidebar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Sidebar.cshtml",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Shared\\Sidebar.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Sidebar.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-04T11:56:46.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dashboards-ecommerce.init.js",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js",
+              "RelativeDocumentMoniker": "wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js",
+              "RelativeToolTip": "wwwroot\\assets\\js\\pages\\dashboards-ecommerce.init.js",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAAAJkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-27T15:17:30.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\sobha\\themeforest-Ox1EUdlJ-auxx-aspnet-mvc-admin-dashboard-template\\Auxx_Asp_Mvc_v1.0.0\\Asp.Net\\Admin\\Auxx\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-02T12:07:06.465Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

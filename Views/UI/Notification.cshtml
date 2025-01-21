@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Notification";
+    ViewBag.pTitle = "UI Elements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="mb-4 text-15">Toastify JS</h5>
+            <div class="flex flex-wrap gap-2">
+                <button type="button" data-toast data-toast-text="Welcome Back! This is a Toast Notification" data-toast-gravity="top" data-toast-position="right" data-toast-className="custom" data-toast-duration="3000" data-toast-close="close" data-toast-style="style" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Default</button>
+                <button type="button" data-toast data-toast-text="Your application was successfully sent" data-toast-gravity="top" data-toast-position="center" data-toast-className="green" data-toast-duration="3000" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Success</button>
+                <button type="button" data-toast data-toast-text="Warning ! Something went wrong try again" data-toast-gravity="top" data-toast-position="center" data-toast-className="yellow" data-toast-duration="3000" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Warning</button>
+                <button type="button" data-toast data-toast-text="Error ! An error occurred." data-toast-gravity="top" data-toast-position="center" data-toast-className="red" data-toast-duration="3000" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Error</button>
+            </div>
+        </div><!-- end card-body -->
+    </div><!-- end card -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="mb-4 text-15">Display Position</h5>
+            <div class="flex flex-wrap gap-2">
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="top" data-toast-position="left" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Top Left</button>
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="top" data-toast-position="center" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Top Center</button>
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="top" data-toast-position="right" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Top Right</button>
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="bottom" data-toast-position="left" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Bottom Left</button>
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="bottom" data-toast-position="center" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Bottom Center</button>
+                <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="bottom" data-toast-position="right" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Bottom Right</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 gap-x-3 md:grid-cols-2 xl:grid-cols-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="mb-4 text-15">Offset Position</h5>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-gravity="top" data-toast-position="right" data-toast-duration="3000" data-toast-offset data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Click Me</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="mb-4 text-15">Close icon Display</h5>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" data-toast data-toast-text="Welcome Back ! This is a Toast Notification" data-toast-position="right" data-toast-duration="3000" data-toast-close="close" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Click Me</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="mb-4 text-15">Duration</h5>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" data-toast data-toast-text="Toast Duration 5s" data-toast-gravity="top" data-toast-position="right" data-toast-duration="5000" class="text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:hover:border-zink-700 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:active:bg-zink-700 dark:active:border-zink-700 dark:active:text-zink-200 dark:text-zink-200">Click Me</button>
+                </div>
+            </div>
+        </div>
+    </div><!--end grid-->
+</div>
+
+@section scripts{
+    <script src="~/assets/js/pages/notifications.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>           
+
+}

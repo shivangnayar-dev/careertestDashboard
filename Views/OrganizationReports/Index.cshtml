@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Auxx.Models.OrganizationReports>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reports tagged to organisation </h1>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.ReportId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Minimumcostofreport)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.MarkuponMinimumcost)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.TotalCost)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Contract_Startdate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Contract_Enddate)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.ReportId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Minimumcostofreport)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.MarkuponMinimumcost)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.TotalCost)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Contract_Startdate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Contract_Enddate)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.OrganizationReportId">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.OrganizationReportId">Details</a> |
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+	

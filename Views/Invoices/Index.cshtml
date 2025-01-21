@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Auxx.Models.Invoices>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Invoices</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Codeofreport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Countoftests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Countofreports)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SumofCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceGUID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Codeofreport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Countoftests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Countofreports)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SumofCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceGUID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

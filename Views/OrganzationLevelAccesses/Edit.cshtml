@@ -1,0 +1,103 @@
+﻿@using System.Security.Claims
+@model Auxx.Models.OrganzationLevelAccess
+
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "~/Views/Shared/BlankLayout.cshtml";
+	var todaydatetime = DateTime.Now;
+	var loggedusername = @User.FindFirst(ClaimTypes.Name)?.Value;
+}
+
+<h4>Edit Organzation LevelAccess</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="OrgLevelAccesslId" />
+			<div class="form-group">
+				<label asp-for="OrganizationId" class="control-label"></label>
+				@Html.DropDownList("OrganizationId", ViewData["OrganizationsList"] as IEnumerable<SelectListItem>, "Select a Organization", new { @class = "form-control" })
+				<span asp-validation-for="OrganizationId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Levels_Core" class="control-label"></label>
+				@Html.DropDownList("Levels_Core", ViewData["LevelLists"] as IEnumerable<SelectListItem>, "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail_Core" class="control-label"></label>
+				<input asp-for="AccessEmail_Core" class="form-control" />
+				<span asp-validation-for="AccessEmail_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail1" class="control-label"></label>
+				<input asp-for="AccessEmail1" class="form-control" />
+				<span asp-validation-for="AccessEmail1" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail2" class="control-label"></label>
+				<input asp-for="AccessEmail2" class="form-control" />
+				<span asp-validation-for="AccessEmail2" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail3" class="control-label"></label>
+				<input asp-for="AccessEmail3" class="form-control" />
+				<span asp-validation-for="AccessEmail3" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail4" class="control-label"></label>
+				<input asp-for="AccessEmail4" class="form-control" />
+				<span asp-validation-for="AccessEmail4" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail5" class="control-label"></label>
+				<input asp-for="AccessEmail5" class="form-control" />
+				<span asp-validation-for="AccessEmail5" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="AccessEmail6" class="control-label"></label>
+				<input asp-for="AccessEmail6" class="form-control" />
+				<span asp-validation-for="AccessEmail6" class="text-danger"></span>
+			</div>
+
+			<div class="form-group">
+				<label asp-for="Enabled_Core" class="control-label"></label>
+				<input asp-for="Enabled_Core" class="form-control" />
+				<span asp-validation-for="Enabled_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Startdate_Core" class="control-label"></label>
+				<input asp-for="Startdate_Core" class="form-control" />
+				<span asp-validation-for="Startdate_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Enddate_Core" class="control-label"></label>
+				<input asp-for="Enddate_Core" class="form-control" />
+				<span asp-validation-for="Enddate_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Username_Core" class="control-label"></label>
+				<input asp-for="Username_Core" class="form-control" />
+				<span asp-validation-for="Username_Core" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input asp-for="CreatedDate" class="form-control" type="hidden" />
+				<input asp-for="CreatedBy" class="form-control" type="hidden" />
+				<input asp-for="UpdatedDate" class="form-control" type="hidden" value="@todaydatetime" />
+				<input asp-for="UpdatedBy" class="form-control" type="hidden" value="@loggedusername" />
+				<input type="submit" value="Save" class="btn btn-primary bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

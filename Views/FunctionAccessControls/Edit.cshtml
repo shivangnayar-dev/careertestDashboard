@@ -1,0 +1,65 @@
+﻿@using System.Security.Claims
+@model Auxx.Models.FunctionAccessControl
+
+@{
+	ViewData["Title"] = "Edit";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var todaydatetime = DateTime.Now;
+	var loggedusername = @User.FindFirst(ClaimTypes.Name)?.Value;
+}
+
+<h4> Edit FunctionAccessControl</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Edit">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="FunctionAccessId" />
+			<div class="form-group">
+				<label asp-for="RoleId" class="control-label"></label>
+				<input asp-for="RoleId" class="form-control" />
+				<span asp-validation-for="RoleId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="FunctionId" class="control-label"></label>
+				<input asp-for="FunctionId" class="form-control" />
+				<span asp-validation-for="FunctionId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="SuperAdmin_CG" class="control-label"></label>
+				<input asp-for="SuperAdmin_CG" class="form-control" />
+				<span asp-validation-for="SuperAdmin_CG" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="SuperAdmin_Customer" class="control-label"></label>
+				<input asp-for="SuperAdmin_Customer" class="form-control" />
+				<span asp-validation-for="SuperAdmin_Customer" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Admin" class="control-label"></label>
+				<input asp-for="Admin" class="form-control" />
+				<span asp-validation-for="Admin" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="User" class="control-label"></label>
+				<input asp-for="User" class="form-control" />
+				<span asp-validation-for="User" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input asp-for="UpdatedDate" class="form-control" type="hidden" value="@todaydatetime" />
+				<input asp-for="UpdatedBy" class="form-control" type="hidden" value="@loggedusername" />
+				<input type="submit" value="Save" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

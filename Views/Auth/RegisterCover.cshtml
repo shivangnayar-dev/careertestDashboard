@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "RegisterCover";
+    Layout = "~/Views/Shared/AuthLayout.cshtml";
+}
+
+<div class="absolute inset-0 bg-custom-900 opacity-80"></div>
+<div class="mb-0 border-none lg:w-[500px] w-full mx-5 lg:mx-0 card bg-white/10 backdrop-blur-lg shadow-none relative">
+    <div class="!px-10 !py-12 card-body">
+        <a href="index">
+            <img src="~/assets/images/logo-light.png" alt="" class="h-6 mx-auto">
+        </a>
+
+        <div class="mt-8 text-center">
+            <h4 class="mb-1 text-white">Create your free account</h4>
+            <p class="text-white/75">Get your free Auxx account now</p>
+        </div>
+
+        <form action="#!" class="mt-10" id="registerForm">
+            <div class="mb-3">
+                <label for="email-field" class="inline-block mb-2 text-base font-medium">Email</label>
+                <input type="text" id="email-field" class="form-input bg-white/10 border-0 dark:border-zink-500 placeholder:text-white/75 focus-within:outline-none" placeholder="Enter email">
+                <div id="email-error" class="hidden mt-1 text-sm text-red-500">Please enter a valid email address.</div>
+            </div>
+            <div class="mb-3">
+                <label for="username-field" class="inline-block mb-2 text-base font-medium">UserName</label>
+                <input type="text" id="username-field" class="form-input bg-white/10 border-0 dark:border-zink-500 placeholder:text-white/75 focus-within:outline-none" placeholder="Enter username">
+                <div id="username-error" class="hidden mt-1 text-sm text-red-500">Please enter a username.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="inline-block mb-2 text-base font-medium">Password</label>
+                <input type="password" id="password" class="form-input bg-white/10 border-0 dark:border-zink-500 placeholder:text-white/75 focus-within:outline-none" placeholder="Enter password">
+                <div id="password-error" class="hidden mt-1 text-sm text-red-500">Password must be at least 8 characters long and contain both letters and numbers.</div>
+            </div>
+            <p class="italic text-15 text-white/75">By registering you agree to the Auxx <a href="#!" class="underline">Terms of Use</a></p>
+            <div class="mt-10">
+                <button type="submit" class="w-full text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 active:text-white active:bg-custom-600 active:border-custom-600">Sign In</button>
+            </div>
+
+            <div class="relative text-center my-9 before:absolute before:top-3 before:inset-x-0 before:border-t before:border-t-white/10 dark:before:border-t-zink-500">
+                <h5 class="inline-block px-2 py-0.5 text-sm bg-white/10 backdrop-blur-2xl text-white rounded relative">Create account with</h5>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2">
+                <button type="button" class="flex items-center justify-center w-[37.5px] h-[37.5px] transition-all duration-200 ease-linear p-0 text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 active:text-white active:bg-custom-600 active:border-custom-600"><i data-lucide="facebook" class="w-4 h-4"></i></button>
+                <button type="button" class="flex items-center justify-center w-[37.5px] h-[37.5px] transition-all duration-200 ease-linear p-0 text-white btn bg-orange-500 border-orange-500 hover:text-white hover:bg-orange-600 hover:border-orange-600 focus:text-white focus:bg-orange-600 focus:border-orange-600 active:text-white active:bg-orange-600 active:border-orange-600"><i data-lucide="mail" class="w-4 h-4"></i></button>
+                <button type="button" class="flex items-center justify-center w-[37.5px] h-[37.5px] transition-all duration-200 ease-linear p-0 text-white btn bg-sky-500 border-sky-500 hover:text-white hover:bg-sky-600 hover:border-sky-600 focus:text-white focus:bg-sky-600 focus:border-sky-600 active:text-white active:bg-sky-600 active:border-sky-600"><i data-lucide="twitter" class="w-4 h-4"></i></button>
+                <button type="button" class="flex items-center justify-center w-[37.5px] h-[37.5px] transition-all duration-200 ease-linear p-0 text-white btn bg-slate-500 border-slate-500 hover:text-white hover:bg-slate-600 hover:border-slate-600 focus:text-white focus:bg-slate-600 focus:border-slate-600 active:text-white active:bg-slate-600 active:border-slate-600"><i data-lucide="github" class="w-4 h-4"></i></button>
+            </div>
+
+            <div class="mt-10 text-center">
+                <p class="mb-0 text-white/75">Already have an account ? <a href="/auth/logincover" class="font-semibold underline transition-all duration-150 ease-linear text-white">Login</a> </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/assets/js/pages/auth-register.init.js"></script>
+
+}

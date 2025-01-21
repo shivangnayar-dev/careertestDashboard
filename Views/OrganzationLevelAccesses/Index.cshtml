@@ -1,0 +1,300 @@
+﻿@model IEnumerable<Auxx.Models.OrganzationLevelAccess>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/BlankLayout.cshtml";
+}
+
+<h1>Organization Level Access</h1>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.OrgLevelAccesslId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.OrganizationName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Core)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email2)
+			</th>
+
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email3)
+			</th>
+		</tr>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email5)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AccessEmail6)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Levels_Email6)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enabled_Email6)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate_Email6)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate_Email6)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Username_Email6)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.OrganizationId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.OrganizationName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AccessEmail_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Levels_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Enabled_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Startdate_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Enddate_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Username_Core)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AccessEmail1)
+				</td>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email1)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email1)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email1)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email1)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email1)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.AccessEmail2)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email2)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email2)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email2)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email2)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email2)
+				</th>
+
+				<th>
+					@Html.DisplayFor(modelItem => item.AccessEmail3)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email3)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email3)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email3)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email3)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email3)
+				</th>
+			</tr>
+			<tr>
+				<th>
+					@Html.DisplayFor(modelItem => item.AccessEmail4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email4)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.AccessEmail5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email5)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.AccessEmail6)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Levels_Email6)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enabled_Email6)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Startdate_Email6)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Enddate_Email6)
+				</th>
+				<th>
+					@Html.DisplayFor(modelItem => item.Username_Email6)
+				</th>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.OrgLevelAccesslId">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.OrgLevelAccesslId">Details</a> |
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

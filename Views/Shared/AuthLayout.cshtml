@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth group" data-layout="vertical" data-sidebar="dark" data-sidebar-size="md" data-mode="light" data-topbar="light" dir="ltr">
+
+<head>
+
+    @Html.Partial("~/Views/Shared/TitleMeta.cshtml")
+    @RenderSection("styles", false)
+    @Html.Partial("~/Views/Shared/HeadCss.cshtml")
+
+</head>
+
+<body class="flex min-h-screen bg-slate-50 dark:bg-zink-800 dark:text-zink-100 font-public">
+
+
+    @RenderBody()
+
+
+    @Html.Partial("~/Views/Shared/VendorScripts.cshtml")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
