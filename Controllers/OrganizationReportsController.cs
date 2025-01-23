@@ -38,8 +38,8 @@ namespace Auxx.Controllers
                                   Contract_Enddate = or.Contract_Enddate,
                                   CreatedDate = or.CreatedDate,
                                   CreatedBy = or.CreatedBy,
-                                  UpdatedDate = or.UpdatedDate,
-                                  UpdatedBy = or.UpdatedBy,
+                                  UpdatedDate = or.UpdatedDate != null ? or.UpdatedDate : null,
+                                  UpdatedBy = or.UpdatedBy != null ? or.UpdatedBy : string.Empty,
                                   OrganizationName = org != null ? org.OrganizationName : null,
                               }).ToListAsync();
             return View(data);
@@ -107,7 +107,26 @@ namespace Auxx.Controllers
             }
 
             ViewData["ReportsList"] = GetReportslist();
-            var organizationReports = await _context.OrganizationReports.FindAsync(id);
+            //var organizationReports = await _context.OrganizationReports.FindAsync(id);
+            var organizationReports = await (from or in _context.OrganizationReports
+                              join org in _context.Organizations on or.OrganizationId equals org.OrganizationId
+                              select new
+                              {
+                                  OrganizationReportId = or.OrganizationReportId,
+                                  OrganizationId = or.OrganizationId,
+                                  ReportId = or.ReportId,
+                                  ReportName = or.Reportname,
+                                  Minimumcostofreport = or.Minimumcostofreport,
+                                  MarkuponMinimumcost = or.MarkuponMinimumcost,
+                                  TotalCost = or.TotalCost,
+                                  Contract_Startdate = or.Contract_Startdate,
+                                  Contract_Enddate = or.Contract_Enddate,
+                                  CreatedDate = or.CreatedDate,
+                                  CreatedBy = or.CreatedBy,
+                                  UpdatedDate = or.UpdatedDate != null ? or.UpdatedDate : null,
+                                  UpdatedBy = or.UpdatedBy != null ? or.UpdatedBy : string.Empty,
+                                  OrganizationName = org != null ? org.OrganizationName : null,
+                              }).Where(x => x.OrganizationReportId == id).SingleOrDefaultAsync();
             if (organizationReports == null)
             {
                 return NotFound();
