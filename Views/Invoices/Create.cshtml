@@ -1,0 +1,151 @@
+﻿@using System.Security.Claims
+@model Auxx.Models.Invoices
+
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var todaydatetime = DateTime.Now;
+	var loggedusername = @User.FindFirst(ClaimTypes.Name)?.Value;
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function () {
+		// When the dropdown value changes
+		$('#OrganizationId').change(function () {
+			var selectedValue = $(this).val();
+
+			// Ensure a valid selection (ignore if placeholder is selected)
+			if (selectedValue) {
+				// Perform an AJAX request to fetch the data
+				$.ajax({
+					url: '/InvoicesController/GetTestCount', // Update to your actual controller and action
+					type: 'GET',
+					data: { organizationId: selectedValue },
+					success: function (response) {
+						// Display the response in the text field
+						$('#Countoftests').val(response.details);
+					},
+					error: function () {
+						alert('An error occurred while fetching the details.');
+					}
+				});
+			} else {
+				// Clear the text field if no organization is selected
+				$('#Countoftests').val('');
+			}
+		});
+
+		$('#ReportId').change(function () {
+			var selectedValue = $(this).val();
+
+			// Ensure a valid selection (ignore if placeholder is selected)
+			if (selectedValue) {
+				// Perform an AJAX request to fetch the data
+				$.ajax({
+					url: '/InvoicesController/GetReportTestCode', // Update to your actual controller and action
+					type: 'GET',
+					data: { reportId: selectedValue },
+					success: function (response) {
+						// Display the response in the text field
+						$('#Codeofreport').val(response.details);
+					},
+					error: function () {
+						alert('An error occurred while fetching the details.');
+					}
+				});
+			} else {
+				// Clear the text field if no organization is selected
+				$('#Codeofreport').val('');
+			}
+		});
+
+		$('#ReportId').change(function () {
+			var selectedValue = $(this).val();
+
+			// Ensure a valid selection (ignore if placeholder is selected)
+			if (selectedValue) {
+				// Perform an AJAX request to fetch the data
+				$.ajax({
+					url: '/InvoicesController/GetReportCount', // Update to your actual controller and action
+					type: 'GET',
+					data: { reportId: selectedValue },
+					success: function (response) {
+						// Display the response in the text field
+						$('#Countofreports').val(response.details);
+					},
+					error: function () {
+						alert('An error occurred while fetching the details.');
+					}
+				});
+			} else {
+				// Clear the text field if no organization is selected
+				$('#Countofreports').val('');
+			}
+		});
+	});
+</script>
+
+<h4>Create Invoices</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="OrganizationId" class="control-label"></label>
+				@Html.DropDownList("OrganizationId", ViewData["OrganizationsList"] as IEnumerable<SelectListItem>, "Select a Organization", new { @class = "form-control" })
+				<span asp-validation-for="OrganizationId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ReportId" class="control-label"></label>
+				@Html.DropDownList("ReportId", ViewData["ReportsList"] as IEnumerable<SelectListItem>, "Select a Report", new { @class = "form-control" })
+				<span asp-validation-for="ReportId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Codeofreport" class="control-label"></label>
+				<input asp-for="Codeofreport" class="form-control" />
+				<span asp-validation-for="Codeofreport" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Countoftests" class="control-label"></label>
+				<input asp-for="Countoftests" class="form-control" />
+				<span asp-validation-for="Countoftests" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Countofreports" class="control-label"></label>
+				<input asp-for="Countofreports" class="form-control" />
+				<span asp-validation-for="Countofreports" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="TotalCost" class="control-label"></label>
+				<input asp-for="TotalCost" class="form-control" />
+				<span asp-validation-for="TotalCost" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="SumofCost" class="control-label"></label>
+				<input asp-for="SumofCost" class="form-control" />
+				<span asp-validation-for="SumofCost" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="InvoiceGUID" class="control-label"></label>
+				<input asp-for="InvoiceGUID" class="form-control" />
+				<span asp-validation-for="InvoiceGUID" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input asp-for="CreatedDate" class="form-control" type="hidden" value="@todaydatetime" />
+				<input asp-for="CreatedBy" class="form-control" type="hidden" value="@loggedusername" />
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

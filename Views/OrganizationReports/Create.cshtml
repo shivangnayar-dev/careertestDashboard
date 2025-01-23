@@ -1,0 +1,101 @@
+﻿@using System.Security.Claims
+@model Auxx.Models.OrganizationReports
+
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var todaydatetime = DateTime.Now;
+	var loggedusername = @User.FindFirst(ClaimTypes.Name)?.Value;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$('#ReportId').change(function () {
+
+			const selectedReportedId = $(this).val();
+
+			if (selectedReportedId) {
+				$.get('./GetCost', { reportId: selectedReportedId }, function (data) {
+					$('#Minimumcostofreport').val(data);
+				});
+			} else {
+				$('#Minimumcostofreport').val('0.00');
+			}
+		});
+	});
+	function updateTotalCost() {
+			// Get the markup cost value
+			const markupCost = parseFloat(document.getElementById('MarkuponMinimumcost').value) || 0;
+
+			// Get the minimum cost of the report value
+			const minimumCost = parseFloat(document.getElementById('Minimumcostofreport').value) || 0;
+
+			// Calculate total cost
+			const totalCost = markupCost + minimumCost;
+
+			// Update the total cost input field
+			document.getElementById('TotalCost').value = totalCost;
+			document.querySelector("input[type='hidden'][asp-for='TotalCost']").value = totalCost;
+		}
+</script>
+
+<h4>Create OrganizationReports</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="OrganizationId" class="control-label"></label>
+				@Html.DropDownList("OrganizationId", ViewData["OrganizationsList"] as IEnumerable<SelectListItem>, "Select a Organization", new { @class = "form-control" })
+				<span asp-validation-for="OrganizationId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="ReportId" class="control-label"></label>
+				@Html.DropDownList("ReportId", ViewData["ReportsList"] as IEnumerable<SelectListItem>, "Select a Report", new { @class = "form-control" })
+				<span asp-validation-for="ReportId" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Minimumcostofreport" class="control-label"></label>
+				<input asp-for="Minimumcostofreport" class="form-control" onblur="updateTotalCost()" />
+				<span asp-validation-for="Minimumcostofreport" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="MarkuponMinimumcost" class="control-label"></label>
+				<input asp-for="MarkuponMinimumcost" class="form-control" onblur="updateTotalCost()" />
+				<span asp-validation-for="MarkuponMinimumcost" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="TotalCost" class="control-label"></label>
+				<input asp-for="TotalCost" class="form-control" readonly  />
+				<input asp-for="TotalCost" type="hidden" />
+				<span asp-validation-for="TotalCost" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Contract_Startdate" class="control-label"></label>
+				<input asp-for="Contract_Startdate" class="form-control" />
+				<span asp-validation-for="Contract_Startdate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Contract_Enddate" class="control-label"></label>
+				<input asp-for="Contract_Enddate" class="form-control" />
+				<span asp-validation-for="Contract_Enddate" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input asp-for="CreatedDate" class="form-control" type="hidden" value="@todaydatetime" />
+				<input asp-for="CreatedBy" class="form-control" type="hidden" value="@loggedusername" />
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

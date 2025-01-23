@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Clipboard";
+    ViewBag.pTitle = "Forms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="mb-4 text-15">Basic Clipboard Copy</h6>
+        <div class="flex">
+            <input type="text" id="clipboard" value="Welcome to Auxx😊" aria-describedby="button-addon2" class="ltr:rounded-r-none rtl:rounded-l-none form-input border-slate-200 dark:border-zink-700 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-800 disabled:border-slate-300 dark:disabled:border-zink-700 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-900 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-400" placeholder="">
+            <button type="button" id="copyButton" data-clipboard-action="copy" data-clipboard-target="#clipboard" class="flex items-center justify-center w-[39px] h-[39px] ltr:rounded-l-none rtl:rounded-r-none p-0 text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:hover:border-zink-700 dark:text-zink-200">
+                <i data-lucide="clipboard-list" class="inline-block w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+</div><!--end card-->
+<div class="card">
+    <div class="card-body">
+        <h6 class="mb-4 text-15">Basic Clipboard Cut</h6>
+        <div class="flex">
+            <input type="text" id="clipboard1" value="Welcome to Auxx😊" aria-describedby="button-addon" class="ltr:rounded-r-none rtl:rounded-l-none form-input border-slate-200 dark:border-zink-700 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-800 disabled:border-slate-300 dark:disabled:border-zink-700 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:bg-zink-900 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-400" placeholder="">
+            <button type="button" id="cutButton" data-clipboard-action="cut" data-clipboard-target="#clipboard1" class="flex items-center justify-center w-[39px] h-[39px] ltr:rounded-l-none rtl:rounded-r-none p-0 text-slate-500 btn bg-slate-200 border-slate-200 hover:text-slate-600 hover:bg-slate-300 hover:border-slate-300 focus:text-slate-600 focus:bg-slate-300 focus:border-slate-300 active:text-slate-600 active:bg-slate-300 active:border-slate-300 dark:bg-zink-800 dark:hover:bg-zink-700 dark:border-zink-800 dark:focus:text-zink-200 dark:hover:text-zink-200 dark:focus:border-zink-700 dark:focus:bg-zink-700 dark:hover:border-zink-700 dark:text-zink-200">
+                <i data-lucide="scissors" class="inline-block w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+</div><!--end card-->
+
+
+@section scripts{
+    <script src="~/assets/libs/clipboard/clipboard.min.js"></script>
+    <script src="~/assets/js/pages/clipbord.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+}

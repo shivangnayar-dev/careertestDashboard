@@ -1,0 +1,304 @@
+﻿@using System.Security.Claims
+@model Auxx.Models.OrganizationLevelAccess
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+	ViewData["Title"] = "Create";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var todaydatetime = DateTime.Now;
+	var loggedusername = @User.FindFirst(ClaimTypes.Name)?.Value;
+}
+
+<h4>Create Organization LevelAccess</h4>
+<hr />
+@* <div class="row"> *@
+
+<form asp-action="Create">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<span id="exceptionerror" class="text-danger">@ViewBag.CustomError</span>
+	<table class="display stripe group" >
+		<tr>
+			<td class="form-group">
+				<label asp-for="OrganizationId" class="control-label"></label>
+				@Html.DropDownList("OrganizationId", ViewData["OrganizationsList"] as IEnumerable<SelectListItem>, "Select a Organization", new { @class = "form-control" })
+				<span asp-validation-for="OrganizationId" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail_Core" class="control-label"></label>
+				<input asp-for="AccessEmail_Core" class="form-control" />
+				<span asp-validation-for="AccessEmail_Core" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Core" class="control-label"></label>
+				@* @Html.DropDownList("Levels_Core", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level2" && item.Text != "Level3"), "Select a Level", new { @class = "form-control" })  *@
+				<input asp-for="Levels_Core" class="form-control" value="Level1" readonly />
+				<input asp-for="Levels_Core" class="form-control" value="Level1" hidden />
+				<span asp-validation-for="Levels_Core" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enabled_Core" class="control-label"></label>
+				<select asp-for="Enabled_Core" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Core" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Core" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Core" class="form-control" />
+				<span asp-validation-for="Startdate_Core" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Core" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Core" class="form-control" />
+				<span asp-validation-for="Enddate_Core" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Core" class="control-label"></label>
+				<input asp-for="Username_Core" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Core" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail1" class="control-label"></label>
+				<input asp-for="AccessEmail1" class="form-control" />
+				<span asp-validation-for="AccessEmail1" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email1" class="control-label"></label>
+				@Html.DropDownList("Levels_Email1", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level1"), "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Email1" class="text-danger"></span>
+			</td>
+
+			<td class="form-group">
+				<label asp-for="Enabled_Email1" class="control-label"></label>
+				<select asp-for="Enabled_Email1" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email1" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email1" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email1" class="form-control" />
+				<span asp-validation-for="Startdate_Email1" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email1" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email1" class="form-control" />
+				<span asp-validation-for="Enddate_Email1" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email1" class="control-label"></label>
+				<input asp-for="Username_Email1" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Email1" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail2" class="control-label"></label>
+				<input asp-for="AccessEmail2" class="form-control" />
+				<span asp-validation-for="AccessEmail2" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email2" class="control-label"></label>
+				@Html.DropDownList("Levels_Email2", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level1"), "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Email2" class="text-danger"></span>
+			</td>
+			@* <td class="form-group">
+			<label asp-for="AccessEmail2_Password" class="control-label"></label>
+			<input asp-for="AccessEmail2_Password" class="form-control" />
+			<span asp-validation-for="AccessEmail2_Password" class="text-danger"></span>
+		</td> *@
+			<td class="form-group">
+				<label asp-for="Enabled_Email2" class="control-label"></label>
+				<select asp-for="Enabled_Email2" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email2" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email2" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email2" class="form-control" />
+				<span asp-validation-for="Startdate_Email2" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email2" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email2" class="form-control" />
+				<span asp-validation-for="Enddate_Email2" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email2" class="control-label"></label>
+				<input asp-for="Username_Email2" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Email2" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail3" class="control-label"></label>
+				<input asp-for="AccessEmail3" class="form-control" />
+				<span asp-validation-for="AccessEmail3" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email3" class="control-label"></label>
+				@Html.DropDownList("Levels_Email3", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level1"), "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Email3" class="text-danger"></span>
+			</td>
+			@* <td class="form-group">
+			<label asp-for="AccessEmail3_Password" class="control-label"></label>
+			<input asp-for="AccessEmail3_Password" class="form-control" />
+			<span asp-validation-for="AccessEmail3_Password" class="text-danger"></span>
+		</td> *@
+			<td class="form-group">
+				<label asp-for="Enabled_Email3" class="control-label"></label>
+				<select asp-for="Enabled_Email3" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email3" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email3" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email3" class="form-control" />
+				<span asp-validation-for="Startdate_Email3" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email3" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email3" class="form-control" />
+				<span asp-validation-for="Enddate_Email3" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email3" class="control-label"></label>
+				<input asp-for="Username_Email3" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Email3" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail4" class="control-label"></label>
+				<input asp-for="AccessEmail4" class="form-control" />
+				<span asp-validation-for="AccessEmail4" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email4" class="control-label"></label>
+				@Html.DropDownList("Levels_Email4", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level1"), "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Email4" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enabled_Email4" class="control-label"></label>
+				<select asp-for="Enabled_Email4" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email4" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email4" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email4" class="form-control" />
+				<span asp-validation-for="Startdate_Email4" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email4" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email4" class="form-control" />
+				<span asp-validation-for="Enddate_Email4" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email4" class="control-label"></label>
+				<input asp-for="Username_Email4" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Email4" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail5" class="control-label"></label>
+				<input asp-for="AccessEmail5" class="form-control" />
+				<span asp-validation-for="AccessEmail5" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email5" class="control-label"></label>
+				@Html.DropDownList("Levels_Email5", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level1"), "Select a Level", new { @class = "form-control" })
+				<span asp-validation-for="Levels_Email5" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enabled_Email5" class="control-label"></label>
+				<select asp-for="Enabled_Email5" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email5" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email5" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email5" class="form-control" />
+				<span asp-validation-for="Startdate_Email5" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email5" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email5" class="form-control" />
+				<span asp-validation-for="Enddate_Email5" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email5" class="control-label"></label>
+				<input asp-for="Username_Email5" class="form-control" value="@User.Identity.Name" />
+				<span asp-validation-for="Username_Email5" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr style="display: flex; gap: 10px;">
+			<td class="form-group">
+				<label asp-for="AccessEmail6" class="control-label"></label>
+				<input asp-for="AccessEmail6" class="form-control" value="CareerTest.in" />
+				<span asp-validation-for="AccessEmail6" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Levels_Email6" class="control-label"></label>
+				@* @Html.DropDownList("Levels_Email6", (ViewData["LevelLists"] as IEnumerable<SelectListItem>)?.Where(item => item.Text != "Level2" && item.Text != "Level3"), "Select a Level", new { @class = "form-control" }) *@
+				<input asp-for="Levels_Email6" class="form-control" value="Level1" readonly />
+				<input asp-for="Levels_Email6" class="form-control" value="Level1" hidden />
+				@* <span asp-validation-for="Levels_Email6" class="text-danger"></span> *@
+			</td>
+			<td class="form-group">
+				<label asp-for="Enabled_Email6" class="control-label"></label>
+				<select asp-for="Enabled_Email6" class="form-control">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+				<span asp-validation-for="Enabled_Email6" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Startdate_Email6" class="control-label"></label>
+				<input type="date" asp-for="Startdate_Email6" class="form-control" />
+				<span asp-validation-for="Startdate_Email6" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Enddate_Email6" class="control-label"></label>
+				<input type="date" asp-for="Enddate_Email6" class="form-control" />
+				<span asp-validation-for="Enddate_Email6" class="text-danger"></span>
+			</td>
+			<td class="form-group">
+				<label asp-for="Username_Email6" class="control-label"></label>
+				<input asp-for="Username_Email6" class="form-control" value="CareerTests" />
+				<span asp-validation-for="Username_Email6" class="text-danger"></span>
+			</td>
+		</tr>
+		<tr class="form-group">
+			<td>
+				<input asp-for="CreatedDate" class="form-control" type="hidden" value="@todaydatetime" />
+				<input asp-for="CreatedBy" class="form-control" type="hidden" value="@loggedusername" />
+				<input type="submit" value="Create" class="btn btn-primary bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600" />
+			</td>
+		</tr>
+	</table>
+</form>
+@* </div> *@
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

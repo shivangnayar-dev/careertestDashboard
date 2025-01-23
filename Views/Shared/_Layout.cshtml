@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth group" data-layout="vertical" data-sidebar="dark" data-sidebar-size="md" data-mode="light" data-topbar="light" dir="ltr">
+   
+<head>
+
+	@Html.Partial("~/Views/Shared/TitleMeta.cshtml")
+	@RenderSection("styles", false)
+	@Html.Partial("~/Views/Shared/HeadCss.cshtml")
+
+</head>
+
+<body class="text-base bg-body-bg text-body font-public dark:text-zink-100 dark:bg-zink-950">
+
+	<div class="group-data-[sidebar-size=sm]:min-h-sm group-data-[sidebar-size=sm]:relative">
+
+		@Html.Partial("~/Views/Shared/Sidebar.cshtml")
+		@Html.Partial("~/Views/Shared/Topbar.cshtml")
+
+		<div class="relative min-h-screen group-data-[sidebar-size=sm]:min-h-sm">
+
+			@Html.Partial("~/Views/Shared/PageWrapper.cshtml")
+
+			<div class="container-fluid group-data-[content=boxed]:max-w-boxed mx-auto">
+
+				@Html.Partial("~/Views/Shared/PageTitle.cshtml")
+
+
+				@RenderBody()
+			</div>
+			<!-- container-fluid -->
+		</div>
+		<!-- End Page-content -->
+		@Html.Partial("~/Views/Shared/Footer.cshtml")
+
+	</div>
+
+	</div>
+	<!-- end main content -->
+	@RenderSection("externalhtml", required: false)
+
+	@Html.Partial("~/Views/Shared/Customizer.cshtml")
+
+	@Html.Partial("~/Views/Shared/VendorScripts.cshtml")
+
+	@RenderSection("scripts", required: false)
+</body>
+</html>

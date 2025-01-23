@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Auxx.Models.Organizations>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Organiation</h1>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.OrganizationName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CG_SuperAdminEmailId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_SuperAdminEmailId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_AdminEmailId1)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_AdminEmailId2)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_AdminEmailId3)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_AdminEmailId4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Customer_AdminEmailId4)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CreatedDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdatedDate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CreatedBy)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdatedBy)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.OrganizationName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CG_SuperAdminEmailId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_SuperAdminEmailId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_AdminEmailId1)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_AdminEmailId2)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_AdminEmailId3)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_AdminEmailId4)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Customer_AdminEmailId5)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CreatedDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UpdatedDate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CreatedBy)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UpdatedBy)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.OrganizationId">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.OrganizationId">Details</a> |
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

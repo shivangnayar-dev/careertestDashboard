@@ -1,0 +1,266 @@
+﻿@{
+	ViewBag.Title = @ViewBag.loggedUserOrgName  + " Dashboard";
+	ViewBag.pTitle = "";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="grid grid-cols-12 2xl:grid-cols-12 gap-x-3">
+	<div class="col-span-12 card 2xl:col-span-2 2xl:row-span-2">
+		<div class="card-body">
+			<div class="flex items-center mb-3">
+				<h6 class="grow text-15">#test stage</h6>
+			</div>
+			<div id="clientSatisfaction" class="apex-charts" data-chart-colors='["bg-custom-500", "bg-yellow-500", "bg-green-500"]' dir="ltr"></div>
+		</div>
+	</div><!--end col-->
+	<div class="col-span-12 card 2xl:col-span-2 2xl:row-span-2">
+		<div class="card-body">
+			<div class="flex items-center mb-3">
+				<h6 class="grow text-15"># attempts</h6>
+			</div>
+			<div id="storeStatusChart" class="apex-charts" data-chart-colors='["bg-green-500", "bg-red-500"]' dir="ltr"></div>
+		</div>
+	</div><!--end col-->
+	<div class="relative col-span-12 bg-custom-500 card md:col-span-6 lg:col-span-3 2xl:col-span-2 before:absolute after:absolute before:bg-white/10 after:bg-white/10 before:size-16 after:size-24 ltr:before:rounded-tl-full rtl:before:rounded-tr-full ltr:after:rounded-tl-full rtl:after:rounded-tr-full before:bottom-0 after:bottom-0 ltr:before:right-0 rtl:before:left-0 ltr:after:right-0 rtl:after:left-0">
+		<div class="card-body">
+			<!-- Header Section -->
+			<div class="flex items-center gap-3 mb-4">
+				<div class="flex items-center justify-center text-white rounded-full bg-white/15 size-10 dark:bg-custom-500/20">
+					<i data-lucide="wallet-2" class="size-5"></i>
+				</div>
+				<h3 class="text-custom-200 text-25">Tests</h3>
+			</div>
+			<!-- Month Section -->
+			<div class="flex items-center mb-2 text-gray">
+				<h5>Month</h5>
+				<div class="flex-1"></div>
+				<h5 id="testUserMonthNumber" class="ml-6">Test: Loading...</h5>
+			</div>
+			<div class="flex items-center mb-6 text-gray">
+			</div>
+			<!-- Today Section -->
+			<div class="flex items-center mb-4">
+				<h5 class="text-gray">Today</h5>
+				<div class="flex-1"></div>
+				<h2 id="testUserDayNumber" class="ml-6 text-white">Test: Loading...</h2>
+			</div>
+		</div>
+	</div><!--end col-->
+	<div class="relative col-span-12 bg-sky-500 card md:col-span-6 lg:col-span-3 2xl:col-span-2 before:absolute after:absolute before:bg-white/10 after:bg-white/10 before:size-16 after:size-24 ltr:before:rounded-tl-full rtl:before:rounded-tr-full ltr:after:rounded-tl-full rtl:after:rounded-tr-full before:bottom-0 after:bottom-0 ltr:before:right-0 rtl:before:left-0 ltr:after:right-0 rtl:after:left-0">
+		<div class="card-body">
+			<div class="flex items-center gap-3 mb-4">
+				<div class="flex items-center justify-center text-white rounded-full bg-white/15 size-10 dark:bg-sky-500/20">
+					<i data-lucide="package" class="size-5"></i>
+				</div>
+				<h3 class="text-sky-200 text-25">Completed Tests</h3>
+			</div>
+			<!-- Month Section -->
+			<div class="flex items-center mb-2 text-gray">
+				<h5>Month</h5>
+				<div class="flex-1"></div>
+				<h5 id="completedUserMonthNumber" class="ml-6">Test: Loading...</h5>
+			</div>
+			<div class="flex items-center ml-8 text-gray">
+			</div>
+			<!-- Today Section -->
+			<div class="flex items-center mb-4">
+				<h5 class="text-gray">Today</h5>
+				<div class="flex-1"></div>
+				<h2 id="completedUserDayNumber" class="ml-6 text-white">Test: Loading...</h2>
+			</div>
+		</div>
+	</div><!--end col-->
+	<div class="relative col-span-12 bg-green-500 card md:col-span-6 lg:col-span-3 2xl:col-span-2 before:absolute after:absolute before:bg-white/10 after:bg-white/10 before:size-16 after:size-24 ltr:before:rounded-tl-full rtl:before:rounded-tr-full ltr:after:rounded-tl-full rtl:after:rounded-tr-full before:bottom-0 after:bottom-0 ltr:before:right-0 rtl:before:left-0 ltr:after:right-0 rtl:after:left-0">
+		<div class="card-body">
+			<div class="flex items-center gap-3 mb-4">
+				<div class="flex items-center justify-center text-white rounded-full bg-white/15 size-10 dark:bg-green-500/20">
+					<i data-lucide="truck" class="size-5"></i>
+				</div>
+				<h3 class="text-green-200 text-25">New Users</h3>
+			</div>
+
+			<!-- Month Section -->
+			<div class="flex items-center mb-2 text-gray">
+				<h5>Month</h5>
+				<div class="flex-1"></div>
+				<h5 id="newUserMonthNumber" class="ml-6"> Loading...</h5>
+			</div>
+			<div class="items-center ml-8 text-gray">
+			</div>
+			<!-- Today Section -->
+			<div class="flex items-center mb-4">
+				<h5 class="text-gray">Today</h5>
+				<div class="flex-1"></div>
+				<h2 id="newUserDayNumber" class="ml-6 text-white">Test: Loading...</h2>
+			</div>
+		</div>
+	</div><!--end col-->
+	<div class="relative col-span-12 bg-red-500 card md:col-span-6 lg:col-span-3 2xl:col-span-2 before:absolute after:absolute before:bg-white/10 after:bg-white/10 before:size-16 after:size-24 ltr:before:rounded-tl-full rtl:before:rounded-tr-full ltr:after:rounded-tl-full rtl:after:rounded-tr-full before:bottom-0 after:bottom-0 ltr:before:right-0 rtl:before:left-0 ltr:after:right-0 rtl:after:left-0">
+		<div class="card-body">
+			<div class="flex items-center gap-3 mb-4">
+				<div class="flex items-center justify-center text-white rounded-full bg-white/15 size-10 dark:bg-red-500/20">
+					<i data-lucide="package-x" class="size-5"></i>
+				</div>
+				<h3 class="text-red-200 text-25">Repeat Logins</h3>
+			</div>
+			<!-- Month Section -->
+			<div class="flex items-center mb-2 text-gray">
+				<h5>Month</h5>
+				<div class="flex-1"></div>
+				<h5 id="repeatLoginsMonthNumber" class="ml-20">Test: Loading...</h5>
+			</div>
+			<div class="flex-1">
+			</div>
+			<!-- Today Section -->
+			<div class="flex items-center mb-4">
+				<h5 class="text-gray">Today</h5>
+				<div class="flex-1"></div>
+				<h2 id="repeatLoginsDayNumber" class="ml-20 text-white">Test: Loading...</h2>
+			</div>
+		</div>
+	</div><!--end col-->
+	<div class="col-span-12 relative card 2xl:col-span-8 overflow-hidden bg-cover bg-[25%_25%] text-white bg-[url('')]">
+	</div>
+	<div class="col-span-12 card 2xl:col-span-3">
+		<div class="card-body">
+			<div class="flex items-center mb-3">
+				<h6 class="grow text-15">Test Summary </h6>
+				<div class="relative">
+					@*<a href="#!" class="transition-all duration-300 ease-linear text-custom-500 hover:text-custom-700">View More <i data-lucide="move-right" class="inline-block w-4 h-4 align-middle ltr:ml-1 rtl:mr-1"></i></a>*@
+				</div>
+			</div>
+			<table id="data-table" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th>Testcode</th>
+						<th>#test (month)</th>
+						<th>#test (day)</th>
+						<th>Expiry date</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<button id="showAllButton" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Show All</button>
+		</div>
+	</div> <!-- end col -->
+	<div class="col-span-12 card 2xl:col-span-9">
+		<div class="card-body">
+			<div class="flex flex-col gap-4 mb-4 md:mb-3 md:items-center md:flex-row">
+				<h6 class="grow text-15">Current month test-daywise</h6>
+				<div>
+					<div class="relative inline-block">
+					</div>
+				</div>
+			</div>
+			<div id="salesAnalytic" class="-ml-4 apex-charts" data-chart-colors='["bg-custom-500", "bg-red-500", "bg-yellow-500", "bg-green-500"]' dir="ltr"></div>
+		</div>
+	</div><!--end col-->
+	<div class="col-span-12 card 2xl:col-span-12">
+		<div class="card-body">
+			<div class="grid items-center grid-cols-1 gap-3 mb-5 2xl:grid-cols-12">
+				<div class="2xl:col-span-3" id="testdetailhead">
+					<h6 class="text-15">Test detail</h6>
+				</div><!--end col-->
+				<div class="2xl:col-span-3 2xl:col-start-10">
+					<div class="flex gap-3">
+						<div class="relative grow">
+						</div>
+						<button id="exportButton" type="button" class="text-white btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20"><i class="align-baseline ltr:pr-1 rtl:pl-1 ri-download-2-line"></i> Export</button>
+					</div>
+				</div><!--end col-->
+			</div><!--end grid-->
+			<div id="columndropdownid" class="dropdown">
+				<button class="btn btn-primary dropdown-toggle bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600" type="button" id="columnSelector" data-bs-toggle="dropdown" aria-expanded="false">
+					Select Columns
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="columnSelector">
+					<li><label><input type="checkbox" class="toggle-vis" data-column="0" checked> Candidate Id</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="1" checked> Testcode</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="2" checked> Start Datetime</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="3" checked> End Datetime</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="4" checked> Name</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="5" checked> Phone</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="6" checked> Email</label></li>
+					<li><label><input type="checkbox" class="toggle-vis" data-column="7" checked> Link to Report</label></li>
+				</ul>
+			</div>
+			<table id="datadetail-table" class="table table-striped table-bordered">
+				<thead>
+					<tr>
+						<th style="width: 5%; text-align:center;">Candidate Id</th>
+						<th style="width: 15%; text-align: center;">Testcode</th>
+						<th style="width: 10%; text-align: center;">Start Datetime</th>
+						<th style="width: 10%; text-align: center;">End Datetime</th>
+						<th style="width: 15%; text-align: center;">Name</th>
+						<th style="width: 10%; text-align: center;">Phone</th>
+						<th style="width: 10%; text-align: center;">Email</th>
+						<th style="width: 25%; text-align: center;">Link to report</th>
+						<th style="width: 25%; text-align: center;">
+							<img src="~/assets/images/Whatsappimage.jpg" />
+						</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+		<div id="popup-modal" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">All Test Records</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<table id="popup-table" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th>Testcode</th>
+									<th>#test (month)</th>
+									<th>#test (day)</th>
+									<th>Expiry date</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--end col-->
+	<!--end col-->
+</div><!--end grid-->
+@section scripts {
+	<!-- DataTables CSS -->
+	<script src="~/assets/js/datatables/jquery-3.7.0.js"></script>
+
+	<script src="~/assets/js/datatables/data-tables.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+	<style>
+		#popup-table .clickable-testcode {
+			cursor: pointer;
+			color: blue;
+			text-decoration: underline;
+		}
+
+			#popup-table .clickable-testcode:hover {
+				color: darkblue;
+			}
+	</style>
+	<!--apexchart js-->
+	<script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+	<!--dashboard ecommerce init js-->
+	<script src="~/assets/js/pages/dashboards-ecommerce.init.js"></script>
+
+	<!-- App js -->
+	<script src="~/assets/js/app.js"></script>
+}
