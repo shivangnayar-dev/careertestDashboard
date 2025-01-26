@@ -1,4 +1,4 @@
-﻿@model Auxx.Models.OrganizationReports
+﻿@model Auxx.Models.OrganizationReportViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -10,44 +10,44 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ReportId)
+            @Html.DisplayNameFor(model => model.OrganizationReport.ReportId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ReportId)
+            @Html.DisplayFor(model => model.OrganizationReport.ReportId)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Minimumcostofreport)
+            @Html.DisplayNameFor(model => model.OrganizationReport.Minimumcostofreport)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Minimumcostofreport)
+            @Html.DisplayFor(model => model.OrganizationReport.Minimumcostofreport)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MarkuponMinimumcost)
+            @Html.DisplayNameFor(model => model.OrganizationReport.MarkuponMinimumcost)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MarkuponMinimumcost)
+            @Html.DisplayFor(model => model.OrganizationReport.MarkuponMinimumcost)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalCost)
+            @Html.DisplayNameFor(model => model.OrganizationReport.TotalCost)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalCost)
+            @Html.DisplayFor(model => model.OrganizationReport.TotalCost)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contract_Startdate)
+            @Html.DisplayNameFor(model => model.OrganizationReport.Contract_Startdate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contract_Startdate)
+            @Html.DisplayFor(model => model.OrganizationReport.Contract_Startdate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contract_Enddate)
+            @Html.DisplayNameFor(model => model.OrganizationReport.Contract_Enddate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contract_Enddate)
+            @Html.DisplayFor(model => model.OrganizationReport.Contract_Enddate)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.OrganizationReportId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model?.OrganizationReport.OrganizationReportId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

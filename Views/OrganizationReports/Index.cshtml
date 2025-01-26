@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Auxx.Models.OrganizationReports>
+﻿@model IEnumerable<Auxx.Models.OrganizationReportViewModel>
 
 @{
 	ViewData["Title"] = "Index";
@@ -14,25 +14,25 @@
 	<thead>
 		<tr>
 			<th>
-				@Html.DisplayNameFor(model => model.OrganizationId)
+				@Html.DisplayNameFor(model => model.OrganizationName)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.ReportId)
+				@Html.DisplayNameFor(model => model.OrganizationReport.ReportId)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Minimumcostofreport)
+				@Html.DisplayNameFor(model => model.OrganizationReport.Minimumcostofreport)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.MarkuponMinimumcost)
+				@Html.DisplayNameFor(model => model.OrganizationReport.MarkuponMinimumcost)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.TotalCost)
+				@Html.DisplayNameFor(model => model.OrganizationReport.TotalCost)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Contract_Startdate)
+				@Html.DisplayNameFor(model => model.OrganizationReport.Contract_Startdate)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Contract_Enddate)
+				@Html.DisplayNameFor(model => model.OrganizationReport.Contract_Enddate)
 			</th>
 			<th></th>
 		</tr>
@@ -45,26 +45,26 @@
 					@Html.DisplayFor(modelItem => item.OrganizationName)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.ReportId)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.ReportId)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Minimumcostofreport)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.Minimumcostofreport)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.MarkuponMinimumcost)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.MarkuponMinimumcost)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.TotalCost)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.TotalCost)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Contract_Startdate)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.Contract_Startdate)
 				</td>
 				<td>
-					@Html.DisplayFor(modelItem => item.Contract_Enddate)
+					@Html.DisplayFor(modelItem => item.OrganizationReport.Contract_Enddate)
 				</td>
 				<td>
-					<a asp-action="Edit" asp-route-id="@item.OrganizationReportId">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.OrganizationReportId">Details</a> |
+					<a asp-action="Edit" asp-route-id="@item.OrganizationReport.OrganizationReportId">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.OrganizationReport.OrganizationReportId">Details</a> |
 				</td>
 			</tr>
 		}

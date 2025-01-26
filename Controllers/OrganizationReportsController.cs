@@ -12,12 +12,6 @@ namespace Auxx.Controllers
 {
     public class OrganizationReportsController : CommonController
     {
-        //private readonly ApplicationDbContext _context;
-
-        //public OrganizationReportsController(ApplicationDbContext context)
-        //{
-        //    _context = context;
-        //}
         public OrganizationReportsController(ApplicationDbContext context, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
             : base(context, configuration, httpContextAccessor) { }
 
@@ -26,20 +20,21 @@ namespace Auxx.Controllers
         {
             var data = await (from or in _context.OrganizationReports
                               join org in _context.Organizations on or.OrganizationId equals org.OrganizationId
-                              select new 
+                              select new OrganizationReportViewModel
                               {
-                                  OrganizationId = or.OrganizationId,
-                                  ReportId = or.ReportId,
-                                  ReportName = or.Reportname,
-                                  Minimumcostofreport = or.Minimumcostofreport,
-                                  MarkuponMinimumcost = or.MarkuponMinimumcost,
-                                  TotalCost = or.TotalCost,
-                                  Contract_Startdate = or.Contract_Startdate,
-                                  Contract_Enddate = or.Contract_Enddate,
-                                  CreatedDate = or.CreatedDate,
-                                  CreatedBy = or.CreatedBy,
-                                  UpdatedDate = or.UpdatedDate != null ? or.UpdatedDate : null,
-                                  UpdatedBy = or.UpdatedBy != null ? or.UpdatedBy : string.Empty,
+                                  // OrganizationId = or.OrganizationId,
+                                  // ReportId = or.ReportId,
+                                  // ReportName = or.Reportname,
+                                  // Minimumcostofreport = or.Minimumcostofreport,
+                                  // MarkuponMinimumcost = or.MarkuponMinimumcost,
+                                  // TotalCost = or.TotalCost,
+                                  // Contract_Startdate = or.Contract_Startdate,
+                                  // Contract_Enddate = or.Contract_Enddate,
+                                  // CreatedDate = or.CreatedDate,
+                                  // CreatedBy = or.CreatedBy,
+                                  //// UpdatedDate = or.UpdatedDate != null ? or.UpdatedDate : null,
+                                  // UpdatedBy = or.UpdatedBy != null ? or.UpdatedBy : string.Empty,
+                                  OrganizationReport = or,
                                   OrganizationName = org != null ? org.OrganizationName : null,
                               }).ToListAsync();
             return View(data);
@@ -53,8 +48,14 @@ namespace Auxx.Controllers
                 return NotFound();
             }
 
-            var organizationReports = await _context.OrganizationReports
-                .FirstOrDefaultAsync(m => m.OrganizationReportId == id);
+           // var organizationReports = await _context.OrganizationReports.FirstOrDefaultAsync(m => m.OrganizationReportId == id);
+            var organizationReports = await (from or in _context.OrganizationReports
+                                             join org in _context.Organizations on or.OrganizationId equals org.OrganizationId
+                                             select new OrganizationReportViewModel
+                                             {
+                                                 OrganizationReport = or,
+                                                 OrganizationName = org != null ? org.OrganizationName : null,
+                                             }).Where(x => x.OrganizationReport.OrganizationReportId == id).SingleOrDefaultAsync();
             if (organizationReports == null)
             {
                 return NotFound();
@@ -109,24 +110,25 @@ namespace Auxx.Controllers
             ViewData["ReportsList"] = GetReportslist();
             //var organizationReports = await _context.OrganizationReports.FindAsync(id);
             var organizationReports = await (from or in _context.OrganizationReports
-                              join org in _context.Organizations on or.OrganizationId equals org.OrganizationId
-                              select new
-                              {
-                                  OrganizationReportId = or.OrganizationReportId,
-                                  OrganizationId = or.OrganizationId,
-                                  ReportId = or.ReportId,
-                                  ReportName = or.Reportname,
-                                  Minimumcostofreport = or.Minimumcostofreport,
-                                  MarkuponMinimumcost = or.MarkuponMinimumcost,
-                                  TotalCost = or.TotalCost,
-                                  Contract_Startdate = or.Contract_Startdate,
-                                  Contract_Enddate = or.Contract_Enddate,
-                                  CreatedDate = or.CreatedDate,
-                                  CreatedBy = or.CreatedBy,
-                                  UpdatedDate = or.UpdatedDate != null ? or.UpdatedDate : null,
-                                  UpdatedBy = or.UpdatedBy != null ? or.UpdatedBy : string.Empty,
-                                  OrganizationName = org != null ? org.OrganizationName : null,
-                              }).Where(x => x.OrganizationReportId == id).SingleOrDefaultAsync();
+                                             join org in _context.Organizations on or.OrganizationId equals org.OrganizationId
+                                             select new OrganizationReportViewModel
+                                             {
+                                                 //OrganizationReportId = or.OrganizationReportId,
+                                                 //OrganizationId = or.OrganizationId,
+                                                 //ReportId = or.ReportId,
+                                                 //ReportName = or.Reportname,
+                                                 //Minimumcostofreport = or.Minimumcostofreport,
+                                                 //MarkuponMinimumcost = or.MarkuponMinimumcost,
+                                                 //TotalCost = or.TotalCost,
+                                                 //Contract_Startdate = or.Contract_Startdate,
+                                                 //Contract_Enddate = or.Contract_Enddate,
+                                                 //CreatedDate = or.CreatedDate,
+                                                 //CreatedBy = or.CreatedBy,
+                                                 //UpdatedDate = or.UpdatedDate ?? DateTime.MinValue, // Safe default for DateTime
+                                                 //UpdatedBy = or.UpdatedBy ?? string.Empty,
+                                                 OrganizationReport = or,
+                                                 OrganizationName = org != null ? org.OrganizationName : null,
+                                             }).Where(x => x.OrganizationReport.OrganizationReportId == id).SingleOrDefaultAsync();
             if (organizationReports == null)
             {
                 return NotFound();
@@ -145,6 +147,7 @@ namespace Auxx.Controllers
             {
                 return NotFound();
             }
+            ModelState.Remove("OrganizationName");
             ModelState.Remove("Reportname");
             if (ModelState.IsValid)
             {
@@ -155,6 +158,7 @@ namespace Auxx.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
+                    ViewData["ReportsList"] = GetReportslist();
                     if (!OrganizationReportsExists(organizationReports.OrganizationReportId))
                     {
                         return NotFound();
@@ -166,6 +170,7 @@ namespace Auxx.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["ReportsList"] = GetReportslist();
             return View(organizationReports);
         }
 
@@ -177,8 +182,8 @@ namespace Auxx.Controllers
                 return NotFound();
             }
 
-            var organizationReports = await _context.OrganizationReports
-                .FirstOrDefaultAsync(m => m.OrganizationReportId == id);
+            var organizationReports = await _context.OrganizationReports.FirstOrDefaultAsync(m => m.OrganizationReportId == id);
+            
             if (organizationReports == null)
             {
                 return NotFound();
